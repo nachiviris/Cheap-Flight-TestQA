@@ -6,6 +6,7 @@ package test.testselenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
 
 /**
  *
@@ -14,8 +15,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Test {
 
    
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
+        
+        
+        TestCheapFlight testflight = new TestCheapFlight();
+        
+        testflight.setUp();
+        
+        testflight.CheapFlightOffers();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
        
+        /*
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver\\chromedriver.exe");
         
         
@@ -32,6 +55,13 @@ public class Test {
         //// Maximizar Ventana
         
         driver.manage().window().maximize();
+       */ 
+        
         
     }
+    
+  
 }
+  
+   
+
