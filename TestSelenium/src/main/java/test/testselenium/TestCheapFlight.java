@@ -37,13 +37,16 @@ public class TestCheapFlight {
     By cfPopularList1Location = By.xpath("//ul[@class='col col-1-2-s']");
     By cfPopularList2Location = By.xpath("//ul[@class='col col-1-2-s divided']");
     
+   //Localizador de Vacation packages
+
+    
     
     
     
     //Before
 public void setUp() throws Exception{
     
-    System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().window().maximize();
     driver.get("https://www.cheapflights.com/");
@@ -87,6 +90,7 @@ public void CheapFlightNews() throws InterruptedException{
         Thread.sleep(3000);
         if(driver.findElement(cfNewsLocator).isDisplayed()){
              System.out.print("Prueba con exito, Noticias Mostradas");
+            
        }
        else{
            System.out.print("Prueba Fallo, noticias no mostradas");
@@ -139,6 +143,8 @@ public void CheapFlightPopular() throws InterruptedException{
    }
     
 }
+
+
 
 
 
