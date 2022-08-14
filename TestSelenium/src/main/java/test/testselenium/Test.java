@@ -19,10 +19,42 @@ public class Test {
         
         
         TestCheapFlight testflight = new TestCheapFlight();
+      /*  
+        ///Inicializar prueba 1
         
         testflight.setUp();
         
         testflight.CheapFlightOffers();
+        
+        testflight.tearDown();
+       
+        
+        ///Inicializar prueba 2
+        
+        
+         testflight.setUp();
+        
+        testflight.CheapFlightNews();
+        
+   */ 
+      
+       ///Inicializar prueba 3
+        
+        testflight.setUp();
+        
+        testflight.CheapFlightDeals();
+        
+     
+        
+        ///Inicializar prueba 4
+      /*  
+        testflight.setUp();
+        
+        testflight.CheapFlightPopular();
+        
+        testflight.tearDown();
+        
+        */
         
         
         

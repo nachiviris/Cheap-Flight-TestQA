@@ -16,21 +16,22 @@ public class TestCheapFlight {
     private WebDriver driver;
     
    //Localizadores de Home
-    By cfHomeLocator = By.linkText("Hello travelers");
+    By cfHomeLocator = By.xpath("//h2[@class='pageTitle valueProp flightsValueProp packagesValueProp hotelsValueProp carsValueProp']");
     By cfHomeLinkLocator = By.xpath("//div[@class='yZLG-plane']");
     
    //Localizadores de Ofertas   
     By cfOfferLocator = By.xpath("//a[@href='/handpicked-deals/']");       
-    By cfOfferMapLocator = By.id("xKRA-overlay");
+    By cfOfferMapLocator = By.xpath("//a[@class='_FW _h-2 _iae _ieV _h-Y _h-Z _iam']");
     
    //Localizadores de Noticias
     By cfNewsLinkLocator = By.xpath("//a[@href='https://www.cheapflights.com/news/']");
-    By cfNewsLocator = By.xpath("//div[@class='slide__body']");
+    By cfNewsLocator1 = By.xpath("//a[@href='https://www.cheapflights.com/news/category/travel-tips']");
+    By cfNewsLocator2 = By.xpath("//a[@href='https://www.cheapflights.com/news/category/travel-inspiration']");
     
    //Localizador de Envio de ofertas 
 
-    By cfDealInputLocation = By.xpath("//input[@id='bcql-input']");
-    By cfDealSendLocation = By.linkText("send me deals");
+    By cfDealInputLocation = By.xpath("//input[@class='Common-Widgets-Text-TextInput size-m inspectletIgnore']");
+    By cfDealSendLocation = By.xpath("//button[@class='Common-Widgets-Button-ButtonDeprecated Common-Widgets-Button-Button ui-button size-m col newsletter-button']");
     
    //Localizador de vuelos populares
     
@@ -46,7 +47,7 @@ public class TestCheapFlight {
     //Before
 public void setUp() throws Exception{
     
-    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().window().maximize();
     driver.get("https://www.cheapflights.com/");
@@ -63,10 +64,10 @@ public void tearDown() throws Exception{
 //Ofertas especiales
 public void CheapFlightOffers() throws InterruptedException{
     driver.findElement(cfHomeLinkLocator).click();
-    Thread.sleep(10000);
+    Thread.sleep(3000);
    if(driver.findElement(cfHomeLocator).isDisplayed()){
        driver.findElement(cfOfferLocator).click();
-       Thread.sleep(10000);
+       Thread.sleep(5000);
        if(driver.findElement(cfOfferMapLocator).isDisplayed()){
              System.out.print("Prueba con exito, ofertas mostradas");
        }
@@ -87,15 +88,24 @@ public void CheapFlightNews() throws InterruptedException{
     Thread.sleep(3000);
     if(driver.findElement(cfHomeLocator).isDisplayed()){
         driver.findElement(cfNewsLinkLocator).click();
-        Thread.sleep(3000);
-        if(driver.findElement(cfNewsLocator).isDisplayed()){
-             System.out.print("Prueba con exito, Noticias Mostradas");
+        Thread.sleep(5000);
+        if(driver.findElement(cfNewsLocator1).isDisplayed()){
+             System.out.print("Noticia 1 , mostrada");
             
        }
        else{
-           System.out.print("Prueba Fallo, noticias no mostradas");
+           System.out.print("Noticia 1, no mostrada");
        }
-   }
+        
+        if (driver.findElement(cfNewsLocator2).isDisplayed()){
+            System.out.print("Noticia 2 , mostrada");
+            
+       }
+       else{
+           System.out.print("Noticia 2, no mostrada");
+       }
+        }
+   
    else{
        System.out.print("Home page not found");
    }
