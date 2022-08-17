@@ -42,7 +42,7 @@ public class Test {
         
         testflight.setUp();
         
-        testflight.CheapFlightDeals();
+        testflight.CheapFlightVacation();
         
      
         
